@@ -10,31 +10,35 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
     />
-
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/main.css" />
   </head>
+
   <body>
     <main>
-      <form class="form-search search">
-        <input
-          class="input-search"
-          name="search"
-          type="text"
-          placeholder="Search images..."
-        />
-        <button class="button-search" type="submit">Search</button>
-      </form>
       <div class="container">
-        <span class="loader" style="display: none"
-          >Loading images, please wait...</span
-        >
+        <form class="form-search search">
+          <input
+            class="input-search"
+            name="search"
+            type="text"
+            placeholder="Search images..."
+          />
+          <button class="button-search" type="submit">Search</button>
+        </form>
         <ul class="gallery"></ul>
+        <div class="loader-box">
+          <span class="loader"></span>
+        </div>
+
+        <button class="button-load" type="submit">Load more</button>
+        <p class="text-load" id="loading-message">
+          Loading images, please wait...
+        </p>
       </div>
     </main>
     <script type="module" src="./main.js"></script>

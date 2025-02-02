@@ -8,7 +8,6 @@
 
   color: #242424;
   background-color: rgba(255, 255, 255, 0.87);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -19,46 +18,14 @@
 body {
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
   margin: 0;
   font-family: Montserrat, sans-serif;
-  background: url(../img/bg.jpg);
+  background-image: url(../img/bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
-  overflow: auto;
-  position: relative;
-}
-
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(185deg,
-      rgba(51, 158, 224, 0.4),
-      rgba(135, 206, 250, 0.3),
-      rgba(169, 169, 169, 0.3),
-      rgba(138, 43, 226, 0.3));
-  animation: gradientFlow 7s infinite alternate ease-in-out;
-  pointer-events: none;
-
-}
-
-@keyframes gradientFlow {
-  0% {
-    background: radial-gradient(ellipse farthest-corner at -80% 0%,
-        rgba(51, 158, 224, 0.4),
-        rgba(169, 169, 169, 0.3) 10%,
-        rgba(135, 206, 250, 0.3) 50%,
-        rgba(138, 43, 226, 0.3));
-  }
-
-
 }
 
 main {

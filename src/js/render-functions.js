@@ -1,18 +1,8 @@
 //  елементи інтерфейсу
 
 export function createMarkup(arr) {
-  return arr
-    .map(
-      ({
-        webformatURL,
-        largeImageURL,
-        tags,
-        likes,
-        views,
-        comments,
-        downloads,
-      }) =>
-        `<li class="gallery-item">
+  return arr.map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) =>
+    `<li class="gallery-item">
           <a class="gallery-link" href="${largeImageURL}">
             <img
               class="gallery-image"
@@ -39,7 +29,6 @@ export function createMarkup(arr) {
               <p class="info">${downloads}</p>
             </li>
           </ul>
-    </li>`
-    )
-    .join("");
+    </li>`)
+    .join('');
 }

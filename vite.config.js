@@ -9,11 +9,11 @@ export default defineConfig(({ command }) => {
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
     },
-    root: 'src',
+    root: 'src',  // Залишити root: 'src', оскільки index.html в папці src
     build: {
       sourcemap: true,
       rollupOptions: {
-        input: glob.sync('./src/*.html'),
+        input: glob.sync('./src/*.html'),  // Шлях до файлів HTML у папці src
         output: {
           manualChunks(id) {
             if (id.includes('node_modules')) {
@@ -34,12 +34,15 @@ export default defineConfig(({ command }) => {
           },
         },
       },
-      outDir: '../dist',
+      outDir: '../dist',  // Залишити '../dist', щоб виходити з папки src в dist
       emptyOutDir: true,
+    },
+    optimizeDeps: {
+      include: ['axios', 'izitoast', 'simplelightbox'],  // Додав оптимізацію для деяких залежностей
     },
     plugins: [
       injectHTML(),
-      FullReload(['./src/**/**.html']),
+      FullReload(['./src/**/**.html']),  // Спостерігаємо за змінами HTML у папці src
       SortCss({
         sort: 'mobile-first',
       }),

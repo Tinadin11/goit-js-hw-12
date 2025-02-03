@@ -131,7 +131,11 @@
     gap: 24px;
     justify-content: center;
     padding: 20px 0;
+    overflow-y: auto;
+    height: 100%;
+
 }
+
 
 .gallery-item {
     max-width: 320px;
